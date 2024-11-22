@@ -1,4 +1,4 @@
-{% set name = "scikit_sundae" %}
+{% set name = "scikit-sundae" %}
 {% set version = "1.0.0rc3" %}
 
 package:
@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 66d2730139f919c6ef25a429af51806f292bc23ee8d1349d5fa09e11f05e1227
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 3
 
 requirements:
   build:
