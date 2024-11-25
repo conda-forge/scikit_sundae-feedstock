@@ -19,7 +19,6 @@ requirements:
     - setuptools  # [build_platform != target_platform]
     - cython  # [build_platform != target_platform]
     - numpy  # [build_platform != target_platform]
-    - sundials >=7.1,<7.2  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
