@@ -10,16 +10,20 @@ source:
   sha256: 66d2730139f919c6ef25a429af51806f292bc23ee8d1349d5fa09e11f05e1227
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - export SUNDIALS_PREFIX=$PREFIX          # [not win]
+    - set "SUNDIALS_PREFIX=%LIBRARY_PREFIX%"  # [win]
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 3
 
 requirements:
   build:
-    - python
-    - setuptools
-    - cython
-    - numpy
-    - sundials >=7.1,<7.2
+    - python  # [build_platform != target_platform]
+    - setuptools  # [build_platform != target_platform]
+    - cython  # [build_platform != target_platform]
+    - numpy  # [build_platform != target_platform]
+    - sundials >=7.1,<7.2  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
   host:
@@ -51,7 +55,7 @@ about:
     scikit-SUNDAE provides Python bindings to SUNDIALS integrators. Specifically,
     it interfaces with the IDA and CVODE solvers. These are capable of efficiently
     solving ordinary differential equations and differential algebraic equations.
-  license: BSD-3.0-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   doc_url: https://scikit-sundae.readthedocs.io/
