@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit_sundae-f
 
 Home: https://github.com/NREL/scikit-sundae
 
-Package license: BSD-3.0-Clause
+Package license: BSD-3-Clause
 
 Summary: SUNDIALS bindings to differential aglebraic equation solvers.
 
