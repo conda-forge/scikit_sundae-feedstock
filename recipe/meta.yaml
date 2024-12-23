@@ -1,5 +1,5 @@
 {% set name = "scikit-sundae" %}
-{% set version = "1.0.0rc3" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 66d2730139f919c6ef25a429af51806f292bc23ee8d1349d5fa09e11f05e1227
+  sha256: aae642501f64d2d511cea32b0df4f4beaae8281253eac57aec209d126d56d254
 
 build:
   script:
     - export SUNDIALS_PREFIX=$PREFIX          # [not win]
     - set "SUNDIALS_PREFIX=%LIBRARY_PREFIX%"  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  number: 0
 
 requirements:
   build:
