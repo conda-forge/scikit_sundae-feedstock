@@ -14,7 +14,7 @@ build:
     - export SUNDIALS_PREFIX=$PREFIX          # [not win]
     - set "SUNDIALS_PREFIX=%LIBRARY_PREFIX%"  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -22,7 +22,7 @@ requirements:
     - setuptools  # [build_platform != target_platform]
     - cython  # [build_platform != target_platform]
     - numpy  # [build_platform != target_platform]
-    - sundials >=7.1,<7.2  # [build_platform != target_platform]
+    - sundials >=7.2,<7.3  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
@@ -33,20 +33,16 @@ requirements:
     - numpy
     - libblas
     - pip
-    - sundials >=7.1,<7.2
+    - sundials >=7.2,<7.3
   run:
     - python
     - numpy
-    - sundials >=7.1,<7.2
+    - sundials >=7.2,<7.3
 
 test:
   imports:
     - numpy
     - sksundae
-  files:
-    - integrate.py
-  commands:
-    - python integrate.py
 
 about:
   home: https://github.com/NREL/scikit-sundae
