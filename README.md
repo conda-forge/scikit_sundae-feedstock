@@ -7,7 +7,7 @@ Home: https://github.com/NREL/scikit-sundae
 
 Package license: BSD-3-Clause
 
-Summary: Python bindings to SUNDIALS differential aglebraic equation solvers.
+Summary: Python bindings to SUNDIALS differential algebraic equation solvers.
 
 Development: https://github.com/NREL/scikit-sundae
 

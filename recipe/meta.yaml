@@ -14,7 +14,7 @@ build:
     - export SUNDIALS_PREFIX=$PREFIX          # [not win]
     - set "SUNDIALS_PREFIX=%LIBRARY_PREFIX%"  # [win]
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -49,7 +49,7 @@ test:
 
 about:
   home: https://github.com/NREL/scikit-sundae
-  summary: Python bindings to SUNDIALS differential aglebraic equation solvers.
+  summary: Python bindings to SUNDIALS differential algebraic equation solvers.
   description: |
     scikit-SUNDAE provides Python bindings to SUNDIALS integrators. Specifically,
     it interfaces with the IDA and CVODE solvers. These are capable of efficiently
