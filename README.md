@@ -3,13 +3,13 @@ About scikit-sundae-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scikit_sundae-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/NREL/scikit-sundae
+Home: https://github.com/NatLabRockies/scikit-sundae
 
 Package license: BSD-3-Clause
 
 Summary: Python bindings to SUNDIALS differential algebraic equation solvers.
 
-Development: https://github.com/NREL/scikit-sundae
+Development: https://github.com/NatLabRockies/scikit-sundae
 
 Documentation: https://scikit-sundae.readthedocs.io/
 
