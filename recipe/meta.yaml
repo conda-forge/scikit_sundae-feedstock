@@ -23,7 +23,7 @@ requirements:
     - cython  # [build_platform != target_platform]
     - numpy  # [build_platform != target_platform]
     - packaging  # [build_platform != target_platform]
-    - sundials >=7.5,<7.6  # [build_platform != target_platform]
+    - sundials >=7.9,<7.10  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
@@ -34,12 +34,12 @@ requirements:
     - numpy
     - libblas
     - pip
-    - sundials >=7.5,<7.6
+    - sundials >=7.9,<7.10
   run:
     - python
     - numpy
     - scipy
-    - sundials >=7.5,<7.6
+    - sundials >=7.9,<7.10
 
 test:
   imports:
@@ -48,7 +48,7 @@ test:
     - sksundae
 
 about:
-  home: https://github.com/NREL/scikit-sundae
+  home: https://github.com/NatLabRockies/scikit-sundae
   summary: Python bindings to SUNDIALS differential algebraic equation solvers.
   description: |
     scikit-SUNDAE provides Python bindings to SUNDIALS integrators. Specifically,
@@ -58,7 +58,7 @@ about:
   license_family: BSD
   license_file: LICENSE
   doc_url: https://scikit-sundae.readthedocs.io/
-  dev_url: https://github.com/NREL/scikit-sundae
+  dev_url: https://github.com/NatLabRockies/scikit-sundae
 
 extra:
   recipe-maintainers:
